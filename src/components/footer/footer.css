@@ -1,0 +1,42 @@
+.lol-footer {
+  background-color: #111111;
+  color: #7e7e7e;
+  padding: 4rem 1rem;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-top: 1px solid #222222;
+}
+
+.riot-logo {
+  color: #eb0029;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: #7e7e7e;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f0e6d2;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
