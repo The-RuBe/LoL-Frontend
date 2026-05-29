@@ -14,33 +14,18 @@
       <div class="title-separator"></div>
     </div>
     
+  @for(character of characters; track character.id) {
     <div class="champion-grid">
       <article class="champion-card">
-        <div class="card-image assassin-bg"></div>
-        <div class="card-content">
-          <h3>ASESINOS</h3>
-          <p>Elimina objetivos clave antes de que puedan reaccionar.</p>
-          <a href="#" class="card-link">Explorar clase</a>
+        <div class="card-image assassin-bg">
+          <img src="{{character.thumbnailUrl}}">
         </div>
-      </article>
-
-      <article class="champion-card">
-        <div class="card-image mage-bg"></div>
         <div class="card-content">
-          <h3>MAGOS</h3>
-          <p>Controla el campo de batalla con poder arcano y daño en área.</p>
-          <a href="#" class="card-link">Explorar clase</a>
-        </div>
-      </article>
-
-      <article class="champion-card">
-        <div class="card-image fighter-bg"></div>
-        <div class="card-content">
-          <h3>LUCHADORES</h3>
-          <p>Sobrevive en la línea frontal y destroza las defensas enemigas.</p>
-          <a href="#" class="card-link">Explorar clase</a>
+          <h3>{{character.name}}</h3>
+          <p>{{character.title}}</p>
         </div>
       </article>
     </div>
+  }
   </section>
 </main>

@@ -7,7 +7,7 @@ import { Soporte } from '../components/soporte/soporte';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, Home, Soporte],
+  imports: [Header, Footer, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
