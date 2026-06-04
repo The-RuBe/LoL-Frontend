@@ -2,20 +2,23 @@
   background-color: #0a0a0c;
   color: #f0e6d2;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  min-height: 100vh;
+  height: auto;
 }
 
 .hero-section {
   position: relative;
-  height: 80vh;
-  min-height: 600px;
+  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background-color: #111;
+  /* Fondo de la cabecera */
+  background-image: url('/Fondo.jpeg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 .hero-overlay {
@@ -24,7 +27,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(10, 10, 12, 0.4) 0%, rgba(10, 10, 12, 0.9) 100%);
+  /* Oscurecemos un poco más para asegurar contraste del texto sobre la imagen */
+  background: linear-gradient(to bottom, rgba(10, 10, 12, 0.55) 0%, rgba(10, 10, 12, 0.95) 100%);
   z-index: 1;
 }
 
@@ -50,40 +54,48 @@
   margin-bottom: 2.5rem;
 }
 
+/* Botón principal mejorado */
 .cta-button {
-  background-color: transparent;
-  color: #c8aa6e;
-  border: 2px solid #c8aa6e;
-  padding: 16px 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+  background: linear-gradient(135deg, #c8aa6e 0%, #f0e6d2 100%);
+  color: #0a0a0c;
+  border: none;
+  padding: 12px 36px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
   cursor: pointer;
   text-transform: uppercase;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(200, 170, 110, 0.18);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
 }
 
 .cta-button:hover {
-  background-color: #c8aa6e;
-  color: #0a0a0c;
-  box-shadow: 0 0 20px rgba(200, 170, 110, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(200, 170, 110, 0.28);
 }
 
+.cta-button:active { transform: translateY(-2px); }
+
 .champions-section {
-  padding: 6rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  padding: 0.3rem 2rem 0 2rem;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  z-index: 10;
+  transition: transform 0.08s linear;
+  will-change: transform;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 0.8rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   letter-spacing: 3px;
   margin: 0;
   color: #f0e6d2;
@@ -98,31 +110,42 @@
 
 .champion-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .champion-card {
   background-color: #1e2328;
   border: 1px solid #3c3c41;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .champion-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
   border-color: #c8aa6e;
 }
 
 .card-image {
-  height: 200px;
+  height: 90px;
   background-color: #2a2e33;
 }
 
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .card-content {
-  padding: 2rem;
+  padding: 0.5rem 0.7rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -130,16 +153,17 @@
 
 .card-content h3 {
   color: #c8aa6e;
-  font-size: 1.5rem;
-  margin: 0 0 1rem 0;
-  letter-spacing: 1px;
+  font-size: 0.95rem;
+  margin: 0 0 0.3rem 0;
+  letter-spacing: 0.6px;
 }
 
 .card-content p {
   color: #a09b8c;
-  line-height: 1.5;
-  margin: 0 0 2rem 0;
+  line-height: 1.3;
+  margin: 0 0 0.5rem 0;
   flex-grow: 1;
+  font-size: 0.85rem;
 }
 
 .card-link {
@@ -147,11 +171,23 @@
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   align-self: flex-start;
-  transition: color 0.2s ease;
+  transition: color 0.15s ease;
 }
 
-.card-link:hover {
-  color: #f0e6d2;
+.card-link:hover { color: #f0e6d2; }
+
+@media (min-width: 1100px) {
+  .champion-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .champion-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .champion-grid { grid-template-columns: 1fr; }
+  .card-image { height: 110px; }
+  .card-content { padding: 0.6rem; }
 }

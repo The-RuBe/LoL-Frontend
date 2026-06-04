@@ -8,14 +8,13 @@
     </div>
   </section>
 
-  <section class="champions-section">
+  <section class="champions-section" id="champions-section" [ngStyle]="{'transform': 'translateY(' + parallaxOffset() + 'px)'}">
     <div class="section-header">
       <h2 class="section-title">ELIGE TU CAMINO</h2>
       <div class="title-separator"></div>
     </div>
-    
-  @for(character of characters; track character.id) {
     <div class="champion-grid">
+    @for(character of characters; track character.id) {
       <article class="champion-card">
         <div class="card-image assassin-bg">
           <img src="{{character.thumbnailUrl}}">
@@ -25,7 +24,8 @@
           <p>{{character.title}}</p>
         </div>
       </article>
+    }
     </div>
-  }
+    <br><br>
   </section>
 </main>
