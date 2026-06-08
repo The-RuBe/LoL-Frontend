@@ -19,4 +19,12 @@ export class CharacterService {
 
   }
 
+  public getCharacterById(id: number): Observable<Character> {
+    return this._http.get<Character>(this._baseUrl + "/characters/" + id);
+  }
+
+  public getMultipleRoleCharacter(): Observable<Character[]> {
+    return this._http.get<Character[]>(this._baseUrl + "/characters/filter/multiplerole");
+  }
+
 }
