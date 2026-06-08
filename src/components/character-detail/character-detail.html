@@ -1,3 +1,24 @@
+@if (character) {
 <div class="character-detail-container">
-  <p>character-detail works!</p>
+  <div class="character-card">
+    <div class="character-image">
+      <img [src]="character.thumbnailUrl" [alt]="character.name">
+    </div>
+    <div class="character-info">
+      <h1 class="character-name">{{ character.name }}</h1>
+      <h2 class="character-title">{{ character.title }}</h2>
+      
+      <div class="roles-container">
+        @for (role of character.roles; track role) {
+          <span class="role-badge">{{ role }}</span>
+        }
+      </div>
+    </div>
+  </div>
 </div>
+} @else {
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Cargando campeón...</p>
+  </div>
+}

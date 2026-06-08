@@ -1,18 +1,18 @@
 export class Character {
     constructor(
-        private _id: number,
+        private _id: string,
         private _championId: number,
         private _name: string,
         private _title: string,
         private _roles: string[],
         private _thumbnailUrl: string
-    ) {};
+    ) { };
 
-    get id(): number {
+    get id(): string {
         return this._id;
-    }   
+    }
 
-    set id(value: number) {
+    set id(value: string) {
         this._id = value;
     }
 

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../../services/character-service';
 import { Character } from '../../model/character';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-character-multiplerole',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './character-multiplerole.html',
   styleUrl: './character-multiplerole.css',
 })
@@ -13,7 +14,7 @@ export class CharacterMultiplerole implements OnInit {
 
   constructor(
     private _characterService: CharacterService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this._characterService.getMultipleRoleCharacter().subscribe(data => {

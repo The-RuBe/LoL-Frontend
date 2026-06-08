@@ -1,5 +1,27 @@
-<ul>
-    @for(character of characters; track character.id) {
-        <li>{{ character.name }}</li>
+<div class="characters-container">
+  <div class="header">
+    <h1 class="title">Campeones</h1>
+    <p class="subtitle">Selecciona tu personaje</p>
+  </div>
+
+  <div class="grid">
+    @for (character of characters; track character.id) {
+      <div class="character-card" [routerLink]="['/character', character.id]">
+        <div class="card-image-wrapper">
+          <img [src]="character.thumbnailUrl" [alt]="character.name" class="card-image">
+          <div class="overlay">
+            <span class="view-btn">Ver Detalles</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <h2 class="card-title">{{ character.name }}</h2>
+          <div class="roles">
+            @for (role of character.roles; track role) {
+              <span class="role-dot" [title]="role"></span>
+            }
+          </div>
+        </div>
+      </div>
     }
-</ul>
+  </div>
+</div>

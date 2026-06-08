@@ -7,19 +7,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CharacterService {
-  
+
   private _baseUrl: string = "http://localhost:8080/api";
 
   constructor(
     private _http: HttpClient
-  ) {}
+  ) { }
 
   public getCharacters(): Observable<Character[]> {
     return this._http.get<Character[]>(this._baseUrl + "/characters");
 
   }
 
-  public getCharacterById(id: number): Observable<Character> {
+  public getCharacterById(id: string): Observable<Character> {
     return this._http.get<Character>(this._baseUrl + "/characters/" + id);
   }
 
