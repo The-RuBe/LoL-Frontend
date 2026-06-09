@@ -6,7 +6,7 @@
 
   <div class="grid">
     @for (character of characters; track character.id) {
-      <div class="character-card" [routerLink]="['/character', character.id]">
+      <div class="character-card" [routerLink]="['/character/detail', character.id]">
         <div class="card-image-wrapper">
           <img [src]="character.thumbnailUrl" [alt]="character.name" class="card-image">
           <div class="overlay">

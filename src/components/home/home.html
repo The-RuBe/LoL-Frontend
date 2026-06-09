@@ -15,7 +15,7 @@
     </div>
     <div class="champion-grid">
     @for(character of characters; track character.id) {
-      <article class="champion-card">
+      <article class="champion-card" [routerLink]="['/character/detail', character.id]" style="cursor: pointer;">
         <div class="card-image assassin-bg">
           <img src="{{character.thumbnailUrl}}">
         </div>

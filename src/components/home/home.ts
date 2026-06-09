@@ -2,10 +2,11 @@ import { Component, OnInit, HostListener, signal } from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { CharacterService } from '../../services/character-service';
 import { Character } from '../../model/character';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [NgStyle],
+  imports: [NgStyle, RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
